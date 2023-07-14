@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "ChowTimeTable",
+  "version": "1.0",
+  "description": "A handy extension to display meals for the day.",
+  "icons": {
+    "16": "icons8-plate-48.png",
+    "48": "icons8-plate-48.png",
+    "128": "icons8-plate-48.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["chow.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons8-plate-48.png",
+      "48": "icons8-plate-48.png",
+      "128": "icons8-plate-96.png"
+    },
+    "default_popup": "chowtime.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["chow.js"]
+    }
+  ]
+}
